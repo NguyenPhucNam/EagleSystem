@@ -1,0 +1,7 @@
+{
+    "Port": "80",
+    "MongoLocal": "mongodb://127.0.0.1:27017/testchotot",
+    "MongoDb": "mongodb://superMarketVLU:asdasd@ds157833.mlab.com:57833/testchotot",
+    "DBTest": "mongodb://unitTestchotot:asdasd1@ds163610.mlab.com:63610/unittest",
+    "JWT_KEY": "secret"
+}
