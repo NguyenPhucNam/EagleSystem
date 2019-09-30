@@ -1,7 +1,6 @@
 "use strict";
 const path = require('path');
 const fs = require('fs');
-const directoryPath = path.join(__dirname, '../public/storages/');
 
 // listing all files using forEach
 // files.forEach(function (file) {
@@ -11,6 +10,7 @@ const directoryPath = path.join(__dirname, '../public/storages/');
 // });
 
 exports.get_storage = async (req, res, next) => {
+    const directoryPath = path.join(__dirname, '../public/storages/');
     fs.readdir(directoryPath, function (err, files) {
         //handling error
         if (err) {
@@ -21,6 +21,7 @@ exports.get_storage = async (req, res, next) => {
 }
 
 exports.get_download_file = async (req, res, next) => {
+    const directoryPath = path.join(__dirname, '../public/storages/');    
     try {
         const name = await req.query.filename;
         const filePath = `${directoryPath}${name}`;
@@ -31,6 +32,7 @@ exports.get_download_file = async (req, res, next) => {
 }
 
 exports.delete_file = async (req, res, next) => {
+    const directoryPath = path.join(__dirname, '../public/storages/');    
     try {
         const name = await req.query.filename;
         const filePath = `${directoryPath}${name}`;
