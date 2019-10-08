@@ -20,6 +20,7 @@
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "formidable": "^1.2.1",
+    "mime-types": "^2.1.24",
     "mongoose": "^5.7.1",
     "os": "^0.1.1",
     "ws": "^7.1.2"

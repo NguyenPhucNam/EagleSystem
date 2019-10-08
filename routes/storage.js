@@ -5,6 +5,7 @@ const storageController = require('../controller/storage.controller');
 
 router
 .get('/storages', storageController.get_storage)
+.get('/storages/file', storageController.get_storage_file)
 .get('/storages/download', storageController.get_download_file)
 .delete('/storages/delete', storageController.delete_file);
 
