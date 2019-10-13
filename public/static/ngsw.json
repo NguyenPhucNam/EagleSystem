@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1570906140085,
+  "timestamp": 1570979769621,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -18,8 +18,8 @@
         "/7-es2015.b1e269967ea1d6b6cca4.js",
         "/favicon.ico",
         "/index.html",
-        "/main-es2015.9918cf5c18d9ff1ad0b7.js",
-        "/main-es5.7399b23ed19514bc5fce.js",
+        "/main-es2015.7c5e3fe31ed94ef1d22a.js",
+        "/main-es5.b5294257de8b44588906.js",
         "/polyfills-es2015.27661dfa98f6332c27dc.js",
         "/polyfills-es5.7f43b971448d2fb49202.js",
         "/runtime-es2015.6eabbcbf19277fc1352c.js",
@@ -61,7 +61,6 @@
         "/assets/pwa/iphonex_splash.png",
         "/assets/pwa/iphonexr_splash.png",
         "/assets/pwa/iphonexsmax_splash.png",
-        "/bg_main.7cf4188d497baca06e20.png",
         "/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.0509ab09c1b0d2200a41.woff2"
       ],
       "patterns": []
@@ -105,12 +104,11 @@
     "/assets/pwa/iphonex_splash.png": "4d179c9b4119c721e8a37a24fb04a1f66310a6e9",
     "/assets/pwa/iphonexr_splash.png": "78c0ecaf5f3dc237049e56a872df77ead544c80e",
     "/assets/pwa/iphonexsmax_splash.png": "6fb3b3fe00bea374e6017eec0dd2735beaf8ecd1",
-    "/bg_main.7cf4188d497baca06e20.png": "b1a95a198db61a332751d1df690acd31ff37b585",
     "/favicon.ico": "ad661967bc51c1a29d959eebc36600aecc0d008f",
     "/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.0509ab09c1b0d2200a41.woff2": "308ee3580a4a34bd230025d460762d53b5344efc",
-    "/index.html": "3bce098e30b54a1a40c961f5ab29c2e76ddaf4be",
-    "/main-es2015.9918cf5c18d9ff1ad0b7.js": "f16a93bd9680ea306e9420b199a550209dcf91cf",
-    "/main-es5.7399b23ed19514bc5fce.js": "daf91f4c21e5a5347e0c304cbaa27c9802ba2793",
+    "/index.html": "36f8506eb599288b073003739a930006a123feb2",
+    "/main-es2015.7c5e3fe31ed94ef1d22a.js": "ef5d312bccf1ac6260f781c481665ccaef049760",
+    "/main-es5.b5294257de8b44588906.js": "5cf539cef9094377dcaa2e8d1f5a4f33094b89de",
     "/polyfills-es2015.27661dfa98f6332c27dc.js": "77f974dd2b186031cfc4f4526d96db4efcd39353",
     "/polyfills-es5.7f43b971448d2fb49202.js": "f84a71ef6c7a788b5fe701bf2405313d7766a66d",
     "/runtime-es2015.6eabbcbf19277fc1352c.js": "203a9376287007e899ef12800e2a85bfacf7da7b",
