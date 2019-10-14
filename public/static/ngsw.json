@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1571073446177,
+  "timestamp": 1571074804316,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -24,7 +24,7 @@
         "/polyfills-es5.7f43b971448d2fb49202.js",
         "/runtime-es2015.dd887719f531e55ae8ea.js",
         "/runtime-es5.3e7c5e5155a08dbfffb6.js",
-        "/styles.be9224875897392e7159.css"
+        "/styles.2716dd794fe03638d92b.css"
       ],
       "patterns": []
     },
@@ -78,7 +78,7 @@
     "/6-es5.f29e7a87e53111260996.js": "60d53aa9af3fbe277a363c961cb639179c97d810",
     "/7-es2015.6d7f8a8f3a30cbad414b.js": "bd3bc78db1302038b289fb96a949ad3a06be51b1",
     "/assets/bg/bg_error.jpg": "cb9dd96184749dd980da4c6b855be35c00a1afd8",
-    "/assets/bg/bg_main.jpg": "0f820e6ff733d30f43d2a804ef28c53a2d2c9b5a",
+    "/assets/bg/bg_main.jpg": "bade9acbec44940f9c746d42d0fabaccad163916",
     "/assets/bg/bg_main0.jpg": "f3f3d3cf9fce4c3078d3370e67cc25d75ac057a5",
     "/assets/bg/bg_main1.jpg": "bd4864285d5ed3005dee085f0a74d44deee62050",
     "/assets/bg/bg_main2.jpg": "bef7810b3e2f048d6f676e8bb593ffcbd90a6ad9",
@@ -108,14 +108,14 @@
     "/assets/pwa/iphonexsmax_splash.png": "6fb3b3fe00bea374e6017eec0dd2735beaf8ecd1",
     "/favicon.ico": "ad661967bc51c1a29d959eebc36600aecc0d008f",
     "/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.0509ab09c1b0d2200a41.woff2": "308ee3580a4a34bd230025d460762d53b5344efc",
-    "/index.html": "46f061b9b4bfc774ce0a17af65f6d478aeb0d890",
+    "/index.html": "51fb937bba192b51963330e1909c470465c98639",
     "/main-es2015.06f667dc35ac1ac3cbc7.js": "9391b60e434397e2ce564b7810b033a716dd5a6e",
     "/main-es5.762b0f72519e6c8d0cba.js": "a62970b42caaa961059494865f17809ff713b63d",
     "/polyfills-es2015.27661dfa98f6332c27dc.js": "77f974dd2b186031cfc4f4526d96db4efcd39353",
     "/polyfills-es5.7f43b971448d2fb49202.js": "f84a71ef6c7a788b5fe701bf2405313d7766a66d",
     "/runtime-es2015.dd887719f531e55ae8ea.js": "e8d9f5d1a6b396d53b94a667a7a7eb9fcb4dced2",
     "/runtime-es5.3e7c5e5155a08dbfffb6.js": "51a88c8c0c41e5679175e682359b97760f789074",
-    "/styles.be9224875897392e7159.css": "b1e6e40b6d1b7feccb07e247f95058faddc1bc76"
+    "/styles.2716dd794fe03638d92b.css": "31ba7743e38f43f12e5fc1f263931a0df3f45511"
   },
   "navigationUrls": [
     {
