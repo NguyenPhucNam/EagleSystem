@@ -18,7 +18,7 @@ if ( cluster.isMaster ) {
     // Các Worker process dựa trên số lượng của Nhân (Cores) có sẵn trên hệ thống.
     // Bằng cách này, các Workers không cần phải choảng nhau để sử dụng tài nguyên 
     // của hệ thống
-    for (let i = 0, coreCount = os.cpus().length ; i < coreCount ; i++ ) {
+    for (let i = 0, coreCount = os.cpus().length / 2; i < coreCount ; i++ ) {
         cluster.fork();
     }
 

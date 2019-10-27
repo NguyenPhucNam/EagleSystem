@@ -45,6 +45,19 @@ exports.checkFoldersExists = () => {
   });
 }
 
+exports.createFolders = (pathFolders) => {
+  try {
+    if (!fs.existsSync(pathFolders)){
+      fs.mkdirSync(pathFolders);
+      return pathFolders;
+    } else {
+      return pathFolders;
+    }
+  } catch (error) {
+    return error;
+  }
+}
+
 exports.checkFoldersAFiles = (directoryPath) => {
   return new Promise((resolve, reject) => {
     try {

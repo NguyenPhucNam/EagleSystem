@@ -11,20 +11,20 @@ const util = require('util');
 * @constructor
 */
 var FFMpeg = function(options) {
-if (options.input) {
-    this.input = options.input;
-} else {
-    throw new Error('no `input` parameter');
-}
-this.arguments = options.arguments || [];
-this.count = 0;
-this.on('newListener', newListener.bind(this));
-this.on('removeListener', removeListener.bind(this));
-this.on('notfoundListener', notfoundListener.bind(this));
-this.on('errorListener', errorListener.bind(this));
-if (Object.observe && (typeof Proxy !== 'function')) {
-    Object.observe(this, observer.bind(this));
-}
+    if (options.input) {
+        this.input = options.input;
+    } else {
+        throw new Error('no `input` parameter');
+    }
+    this.arguments = options.arguments || [];
+    this.count = 0;
+    this.on('newListener', newListener.bind(this));
+    this.on('removeListener', removeListener.bind(this));
+    this.on('notfoundListener', notfoundListener.bind(this));
+    this.on('errorListener', errorListener.bind(this));
+    if (Object.observe && (typeof Proxy !== 'function')) {
+        Object.observe(this, observer.bind(this));
+    }
 };
 
 util.inherits(FFMpeg, EventEmitter);
@@ -36,39 +36,39 @@ util.inherits(FFMpeg, EventEmitter);
 FFMpeg.cmd = 'ffmpeg';
 
 function newListener(event) {
-if (event === 'camdata' && this.listeners(event).length === 0) {
-    this.start();
-}
+    if (event === 'camdata' && this.listeners(event).length === 0) {
+        this.start();
+    }
 }
 
 function removeListener(event) {
-if (event === 'camdata' && this.listeners(event).length === 0) {
-    this.stop();
-}
+    if (event === 'camdata' && this.listeners(event).length === 0) {
+        this.stop();
+    }
 }
 
 function notfoundListener(event) {
-if (event === 'camdata' && this.listeners(event).length === 0) {
-    this.notfound();
-}
+    if (event === 'camdata' && this.listeners(event).length === 0) {
+        this.notfound();
+    }
 }
 
 function errorListener(event) {
-if (event === 'camdata' && this.listeners(event).length === 0) {
-    this.error();
-}
+    if (event === 'camdata' && this.listeners(event).length === 0) {
+        this.error();
+    }
 }
 
 function observer(changes) {
-if (changes.some(function(change) {
-    return change.type === 'update';
-})) {
-    this.restart();
-}
+    if (changes.some(function(change) {
+        return change.type === 'update';
+    })) {
+        this.restart();
+    }
 }
 
 FFMpeg.prototype._args = function() {
-return this.arguments = [
+    return this.arguments = [
     '-loglevel', 'quiet',
     '-fflags', 'nobuffer',
     '-rtsp_transport', 'tcp',
@@ -94,89 +94,89 @@ return this.arguments = [
 * Start ffmpeg spawn process
 */
 FFMpeg.prototype.start = function() {
-let self = this;
-let isStart = 0;
-this.child = spawn(FFMpeg.cmd, this._args(),{detached: false});
-this.child.stdout.on('data', function(data){
-    self.emit('camdata', data);
-    (isStart++ === 0) && this.emit('start');
-}.bind(this));
-this.child.stderr.on('data', function(data) {
-    global.process.stderr.write(data);
-}.bind(this));
-this.child.on('close', function(code) {
-    if (code === (0 || 1)) {
-        if(this.count++ < 5) {
-            setTimeout(FFMpeg.prototype.start.bind(this), 1000);
-        } else {
-            this.notfound('Not Found Camera IP');
-            return;
+    let self = this;
+    let isStart = 0;
+    this.child = spawn(FFMpeg.cmd, this._args(),{detached: false});
+    this.child.stdout.on('data', function(data){
+        self.emit('camdata', data);
+        (isStart++ === 0) && this.emit('start');
+    }.bind(this));
+    this.child.stderr.on('data', function(data) {
+        global.process.stderr.write(data);
+    }.bind(this));
+    this.child.on('close', function(code) {
+        if (code === (0 || 1)) {
+            if(this.count++ < 5) {
+                setTimeout(FFMpeg.prototype.start.bind(this), 1000);
+            } else {
+                this.notfound('Not Found Camera IP');
+                return;
+            }
         }
-    }
-}.bind(this));
-this.child.on('error', function(err) {
-    if (err.code === 'ENOENT') {
-        this.error('FFMpeg executable wasn\'t found. Install this package and check FFMpeg.cmd property');
-    } else {
-        this.error(err);
-    }
-});
+    }.bind(this));
+    this.child.on('error', function(err) {
+        if (err.code === 'ENOENT') {
+            this.error('FFMpeg executable wasn\'t found. Install this package and check FFMpeg.cmd property');
+        } else {
+            this.error(err);
+        }
+    });
 };
 
 /**
 * Stop ffmpeg spawn process
 */
 FFMpeg.prototype.stop = function() {
-if(this.child) {
-    this.child.stdout.pause();
-    this.child.stderr.pause();
-    this.child.kill();
-    delete this.child;
-    this.emit('stop');
-}
+    if(this.child) {
+        this.child.stdout.pause();
+        this.child.stderr.pause();
+        this.child.kill();
+        delete this.child;
+        this.emit('stop');
+    }
 };
 
 /**
 * Not Found ffmpeg spawn process
 */
 FFMpeg.prototype.notfound = function(err) {
-this.child.stdout.pause();
-this.child.stderr.pause();
-this.child.kill();
-delete this.child;
-this.emit('notfound', err);
+    this.child.stdout.pause();
+    this.child.stderr.pause();
+    this.child.kill();
+    delete this.child;
+    this.emit('notfound', err);
 };
 
 /**
 * Error ffmpeg spawn process
 */
 FFMpeg.prototype.error = function(err) {
-this.child.stdout.pause();
-this.child.stderr.pause();
-this.child.kill();
-delete this.child;
-this.emit('error', err);
+    this.child.stdout.pause();
+    this.child.stderr.pause();
+    this.child.kill();
+    delete this.child;
+    this.emit('error', err);
 };
 
 /**
 * Restart ffmpeg spawn process
 */
 FFMpeg.prototype.restart = function() {
-if (this.child) {
-    this.stop();
-    this.start();
-}
+    if (this.child) {
+        this.stop();
+        this.start();
+    }
 };
 
 if (typeof Proxy === 'function') {
-FFMpeg = new Proxy(FFMpeg, {
-    set: function(target, property) {
-        if (property !== 'super_' && target[property] !== undefined) {
-            target.restart();
+    FFMpeg = new Proxy(FFMpeg, {
+        set: function(target, property) {
+            if (property !== 'super_' && target[property] !== undefined) {
+                target.restart();
+            }
+            return true;
         }
-        return true;
-    }
-});
+    });
 }
 
 module.exports.FFMpeg = FFMpeg;
