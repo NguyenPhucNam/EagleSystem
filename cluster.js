@@ -4,8 +4,6 @@ const cluster = require( "cluster" );
 const os = require( "os" );
 
 // ----------------------------------------------------------------------------------- //
-// ----------------------------------------------------------------------------------- //
-
 
 // cluster module trong nodejs hoạt động bằng cách xử lý entry-point của ứng dụng
 // nhân lên và chia sẻ các Master Port với các Worker port. Như vậy, đoạn code này 
